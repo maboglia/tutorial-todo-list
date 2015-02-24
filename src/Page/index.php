@@ -11,7 +11,11 @@ public function go() {
     if(isset($_POST["action"])) {
         switch($_POST["action"]) {
         case "add":
-            // TODO 2: Implement add action.
+            $taskList->add([
+                "done" => false,
+                "title" => $_POST["title"],
+                "dateTimeCreated" => date("Y-m-d H:i:s"),
+            ]);
             break;
 
         case "delete":
