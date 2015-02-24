@@ -19,7 +19,7 @@ public function go() {
             break;
 
         case "delete":
-            // TODO 3: Implement delete action.
+            $taskList->deleteRow($_POST["index"]);
             break;
 
         case "update":
