@@ -31,6 +31,23 @@ body>ul {
 		padding: 0 1rem;
 		padding-left: 2rem;
 
+		&.done {
+			button[value='check']::before {
+				color: black;
+			}
+			input {
+				font-style: italic;
+				text-decoration: line-through;
+				opacity: 0.5;
+			}
+		}
+
+		&:last-of-type {
+			button[value='check'],button[value='delete'] {
+				visibility: hidden;
+			}
+		}
+
 		form {
 			display: flex;
 			align-items: center;
