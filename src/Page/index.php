@@ -35,8 +35,21 @@ public function go() {
     }
 
     // Output task list:
-    foreach ($taskList as $task) {
-        // TODO 6: Output task to list on page.
+    foreach ($taskList as $i => $task) {
+        // Obtain a clone of the original <li>.
+        $li = $this->template->get("task");
+        // Output the task details:
+        $li->querySelector(".index")->value = $i;
+        $li->querySelector("input[name='title']")->value = $task["title"];
+
+        // If the task is done, mark it as done on the page.
+        if($task["done"]) {
+            $li->classList->add("done");
+            $li->querySelector("[value='check']")->textContent = "Uncheck";
+        }
+
+        // Add the template back to the page.
+        $li->appendTemplate();
     }
 
     // TODO 7: Output one extra empty task, for adding new ones.
