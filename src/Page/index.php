@@ -6,7 +6,12 @@ class Index extends \Gt\Page\Logic {
 public function go() {
     // TODO 1: Make $taskList read from a persistent data source.
     // (for now, just use an array).
-    $taskList = [];
+    $taskList = [
+        ["title" => "brew coffee",  "done" => true ],
+        ["title" => "drink coffee", "done" => true ],
+        ["title" => "code app",     "done" => false],
+        ["title" => "profit",       "done" => false],
+    ];
 
     // Handle user input first:
     if(isset($_POST["action"])) {
