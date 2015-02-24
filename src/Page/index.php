@@ -52,7 +52,11 @@ public function go() {
         $li->appendTemplate();
     }
 
-    // TODO 7: Output one extra empty task, for adding new ones.
+    // Output 'add' row:
+    $li = $this->template->get("task");
+    $li->querySelector("button[value='update']")->value = "add";
+    $li->querySelector("input[name='title']")->setAttribute("autofocus", true);
+    $li->appendTemplate();
 }
 
 }#
