@@ -29,7 +29,12 @@ public function go() {
             break;
 
         case "check":
-            // TODO 5: Implement check action.
+            // Get the task we are updating.
+            $currentTask = $taskList->get($_POST["index"]);
+            // Toggle the done field.
+            $currentTask["done"] = !$currentTask["done"];
+            // Update the row with toggled done field.
+            $taskList->updateRow($_POST["index"], $currentTask);
             break;
         }
     }
