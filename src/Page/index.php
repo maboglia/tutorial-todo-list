@@ -23,7 +23,9 @@ public function go() {
             break;
 
         case "update":
-            // TODO 4: Implement update action.
+            $taskList->updateRow($_POST["index"], [
+                "title" => $_POST["title"],
+            ]);
             break;
 
         case "check":
