@@ -44,6 +44,44 @@ body>ul {
 				border: none;
 				background: transparent;
 				opacity: 0;
+
+				span {
+					display: none;
+				}
+
+				&::before {
+					display: block;
+					color: #44a;
+				}
+
+				&[value='update'] {
+					&::before {
+						content: "▶";
+					}
+				}
+
+				&[value='delete'] {
+					&::before {
+						content: "✖";
+					}
+				}
+
+				&[value='add'] {
+					&::before {
+						content: "⊞";
+					}
+				}
+
+				&[value='check'] {
+					order: -1;
+					border: 1px solid black;
+					opacity: 0.8;
+
+					&::before {
+						color: transparent;
+						content: "✓";
+					}
+				}
 			}
 
 			input {
@@ -55,6 +93,13 @@ body>ul {
 				padding-left: 0.5rem;
 				margin-left: 0.5rem;
 				border-left: 1px solid rgba(red, 0.25);
+			}
+
+			&:hover button {
+				opacity: 0.5;
+			}
+			input:focus~button, button:focus, button:hover {
+				opacity: 1;
 			}
 		}
 	}
