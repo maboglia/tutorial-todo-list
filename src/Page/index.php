@@ -4,14 +4,8 @@ namespace App\Page;
 class Index extends \Gt\Page\Logic {
 
 public function go() {
-    // TODO 1: Make $taskList read from a persistent data source.
-    // (for now, just use an array).
-    $taskList = [
-        ["title" => "brew coffee",  "done" => true ],
-        ["title" => "drink coffee", "done" => true ],
-        ["title" => "code app",     "done" => false],
-        ["title" => "profit",       "done" => false],
-    ];
+    $data = new \Gt\Data\Source\Csv("todo-app");
+    $taskList = $data->getTable("taskList");
 
     // Handle user input first:
     if(isset($_POST["action"])) {
