@@ -2,3 +2,4 @@ www/*
 vendor/*
 *.sublime-*
 *.phar
+data/*
