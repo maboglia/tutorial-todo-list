@@ -93,7 +93,7 @@ body>ul {
 					order: -1;
 					border: 1px solid black;
 					opacity: 0.8;
-
+					color: transparent;
 					&::before {
 						color: transparent;
 						content: "✓";
